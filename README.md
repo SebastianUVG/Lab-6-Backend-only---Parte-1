@@ -16,7 +16,7 @@ API backend para gestionar partidos de fútbol de La Liga Española con:
 
 ### Pasos
 ```bash
-git clone https://github.com/tu-usuario/laliga-tracker.git
+git clone https://github.com/SebastianUVG/Lab-6-Backend-only---Parte-1.git
 cd laliga-tracker
 docker-compose up --build
 ```
