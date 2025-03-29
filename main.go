@@ -33,7 +33,7 @@ type Match struct {
 	HomeTeam    string    `json:"homeTeam"`
 	AwayTeam    string    `json:"awayTeam"`
 	MatchDate   time.Time `json:"matchDate"`
-	Goals       int       `json:"goals,omitempty"` // Cambiado de GoalsHome/GoalsAway
+	Goals       int       `json:"goals,omitempty"`
 	YellowCards int       `json:"yellowCards,omitempty"`
 	RedCards    int       `json:"redCards,omitempty"`
 	ExtraTime   int       `json:"extraTime,omitempty"`
@@ -403,7 +403,7 @@ func setExtraTime(c *gin.Context) {
 
 	ctx := context.Background()
 
-	// Primero obtenemos el valor actual del tiempo extra
+	
 	var currentExtraTime int
 	err = db.QueryRow(ctx, "SELECT extra_time FROM matches WHERE id = $1", matchID).Scan(&currentExtraTime)
 
@@ -416,13 +416,13 @@ func setExtraTime(c *gin.Context) {
 		return
 	}
 
-	// Calculamos el nuevo valor (incrementamos 1 minuto, máximo 30)
+	
 	newExtraTime := currentExtraTime + 1
 	if newExtraTime > 30 {
 		newExtraTime = 30
 	}
 
-	// Actualizamos en la base de datos
+	
 	result, err := db.Exec(ctx,
 		"UPDATE matches SET extra_time = $1 WHERE id = $2",
 		newExtraTime, matchID,
@@ -438,7 +438,7 @@ func setExtraTime(c *gin.Context) {
 		return
 	}
 
-	// Mensaje de respuesta
+	
 	message := fmt.Sprintf("Tiempo extra incrementado a %d minutos", newExtraTime)
 	if newExtraTime >= 30 {
 		message = "Tiempo extra alcanzó el máximo de 30 minutos"
