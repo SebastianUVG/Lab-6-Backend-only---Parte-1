@@ -1,0 +1,12 @@
+API LaLigaTracker - Uso Básico
+
+Endpoints disponibles:
+- GET    /api/matches          - Lista todos los partidos
+- POST   /api/matches          - Crea nuevo partido
+- GET    /api/matches/:id      - Obtiene un partido por ID
+- PUT    /api/matches/:id      - Actualiza un partido completo
+- DELETE /api/matches/:id      - Elimina un partido
+- PATCH  /api/matches/:id/goals - Registra gol 
+- PATCH  /api/matches/:id/yellowcards - Añade tarjeta amarilla
+- PATCH  /api/matches/:id/redcards   - Añade tarjeta roja
+- PATCH  /api/matches/:id/extratime  - Establece tiempo extra
