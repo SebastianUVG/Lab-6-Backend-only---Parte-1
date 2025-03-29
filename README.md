@@ -25,8 +25,6 @@ docker-compose up --build
 https://sebastian-1545329.postman.co/workspace/My-Workspace~86169d7e-33f9-4de6-89f3-3b4d7c4ad9e3/collection/43574994-19b30329-dafd-487b-ad4d-49fd19fc138f
 
 ## 🔌 Endpoints de la API
-
-### GET
 ```http
 GET /api/matches
 GET /api/matches/{id}
